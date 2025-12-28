@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tjenester | Aasland klinikk</title>
+  <meta name="description" content="Våre behandlings- og fysioterapitjenester." />
+  <style>
+    :root{
+      --accent:#2B7A78;
+      --accent-2:#9ad3bc;
+      --bg:#f7f9f9;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:14px;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f172a;line-height:1.5}
+
+    header{
+      backdrop-filter:blur(6px);
+      position:sticky;
+      top:0;
+      z-index:40;
+      background:rgba(255,255,255,0.7);
+      border-bottom:1px solid rgba(15,23,42,0.04)
+    }
+
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand a{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
+    .logo-img{
+      height:52px;
+      object-fit:contain;
+      border-radius:12px;
+    }
+
+    nav{display:flex;align-items:center;gap:1rem}
+    nav a{margin-left:1rem;color:inherit;text-decoration:none;font-weight:600;transition:0.2s}
+    nav a:hover{color:var(--accent-2);text-decoration:underline}
+
+    .header-social{
+      display:flex;
+      gap:0.6rem;
+      align-items:center;
+      margin-left:1rem;
+    }
+    .header-social a{
+      display:flex;
+      width:26px;
+      height:26px;
+      opacity:0.8;
+      transition:0.2s;
+    }
+    .header-social a:hover{
+      opacity:1;
+      transform:scale(1.1);
+    }
+
+    main{padding:2rem 0}
+    section{margin:1.5rem 0}
+    .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 16px rgba(16,24,40,0.04)}
+    .muted{color:var(--muted)}
+
+    .hero {
+      text-align:center;
+      padding:3rem 1rem;
+      background:linear-gradient(135deg, var(--accent-2), var(--accent));
+      color:white;
+      border-radius:12px;
+      margin-bottom:2rem;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:1.5rem;
+      margin-top:1rem;
+    }
+    .service-card{
+      background:var(--card);
+      padding:1.5rem;
+      border-radius:12px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align:center;
+    }
+    .service-card:hover{
+      transform: scale(1.05);
+      box-shadow:0 8px 24px rgba(0,0,0,0.1);
+    }
+    .icon{
+      font-size:32px;
+      margin:0 auto 1rem auto;
+      background:var(--accent);
+      color:white;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .service-card h3{margin:0.5rem 0}
+    .service-card p{line-height:1.6}
+
+    .cta {
+      text-align:center;
+      padding:2rem;
+      background:var(--accent-2);
+      color:black; 
+      border-radius:12px;
+      margin-top:2rem;
+    }
+    .cta a {
+      padding:0.8rem 1.5rem;
+      background:var(--accent);
+      color:white;
+      border-radius:10px;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:0.5rem;
+      transition:0.2s;
+      font-weight:600;
+    }
+    .cta a:hover{background:var(--accent-2)}
+
+    footer{padding:2rem 0;color:var(--muted)}
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .social-icons{
+      display:flex;
+      gap:0.8rem;
+      align-items:center;
+    }
+    .social-icons a{
+      display:flex;
+      width:26px;
+      height:26px;
+      opacity:0.8;
+      transition:0.2s;
+    }
+    .social-icons a:hover{
+      opacity:1;
+      transform:scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <a href="index.html">
+          <img src="Norgefysioterapi.png" alt="Norge Fysioterapi logo" class="logo-img">
+        </a>
+        <div>
+          <div style="font-weight:800">
+            <a href="index.html" style="text-decoration:none;color:inherit">Aasland klinikk</a>
+          </div>
+          <div style="font-size:.8rem;color:var(--muted)">Fysioterapi · Bevegelse · Bedring</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <nav aria-label="Hovednavigasjon">
+          <a href="tjenester.html">Tjenester</a>
+          <a href="bestill.html">Bestill time</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <div class="header-social">
+          <a href="https://www.instagram.com/daviddalehaugaasland/" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 006.5 13 5.5 5.5 0 0012 18.5 5.5 5.5 0 0017.5 13 5.5 5.5 0 0012 7.5zm0 2A3.5 3.5 0 0115.5 13 3.5 3.5 0 0112 16.5 3.5 3.5 0 018.5 13 3.5 3.5 0 0112 9.5zm4.8-3.3a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/help/668969529866328/" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 013.7-3.9c1 0 2 .1 2 .1v2.3h-1.1c-1.1 0-1.4.7-1.4 1.3V12H18l-.5 3h-2.8v7A10 10 0 0022 12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Velkommen til Aasland klinikk</h1>
+      <p>Profesjonell fysioterapi og behandling tilpasset dine behov</p>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Våre tjenester</h2>
+        <p class="muted">Her finner du et utvalg av behandlingene vi tilbyr.</p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="icon">🦵</div>
+            <h3>Fysioterapi</h3>
+            <p class="muted">Undersøkelse, behandling og opptrening ved smerter eller skade.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">👐</div>
+            <h3>Manuellterapi</h3>
+            <p class="muted">Leddmobilisering og avansert behandling av muskel- og skjelettplager.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">💪</div>
+            <h3>Rehabilitering</h3>
+            <p class="muted">Opptrening etter operasjon, langvarige smerter eller funksjonstap.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">💆</div>
+            <h3>Massasje</h3>
+            <p class="muted">Avslappende og behandlende massasje for muskelspenninger.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🏋️</div>
+            <h3>Treningsveiledning</h3>
+            <p class="muted">Skreddersydde treningsprogram tilpasset dine mål og behov.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ønsker du en time?</h2>
+      <p>Kontakt oss i dag for å bestille behandling eller rehabilitering.</p>
+      <a href="bestill.html">Bestill time</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <strong>Aasland klinikk</strong>
+        <div class="muted">© <span id="year"></span> Alle rettigheter</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/daviddalehaugaasland/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 006.5 13 5.5 5.5 0 0012 18.5 5.5 5.5 0 0017.5 13 5.5 5.5 0 0012 7.5zm0 2A3.5 3.5 0 0115.5 13 3.5 3.5 0 0112 16.5 3.5 3.5 0 018.5 13 3.5 3.5 0 0112 9.5zm4.8-3.3a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/help/668969529866328/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 013.7-3.9c1 0 2 .1 2 .1v2.3h-1.1c-1.1 0-1.4.7-1.4 1.3V12H18l-.5 3h-2.8v7A10 10 0 0022 12z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
