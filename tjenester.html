@@ -150,6 +150,53 @@
       opacity:1;
       transform:scale(1.1);
     }
+
+    /* BURGER */
+    .burger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+    }
+    .burger span{
+      width:26px;
+      height:3px;
+      background:var(--accent);
+      border-radius:2px;
+    }
+
+    /* MOBIL */
+    @media (max-width:768px){
+      nav{
+        position:absolute;
+        top:100%;
+        right:0;
+        background:white;
+        flex-direction:column;
+        width:100%;
+        max-height:0;
+        overflow:hidden;
+        transition:0.3s ease;
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+        padding:0;
+      }
+      nav.show{
+        max-height:300px;
+        padding:1rem 0;
+      }
+      nav a{
+        margin:0;
+        padding:.75rem 1rem;
+        width:100%;
+        text-align:right;
+      }
+      .burger{
+        display:flex;
+      }
+      .header-social{
+        display:none; /* skjul sosiale ikoner på mobil */
+      }
+    }
   </style>
 </head>
 <body>
@@ -167,11 +214,16 @@
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:1rem">
-        <nav aria-label="Hovednavigasjon">
+        <nav id="nav" aria-label="Hovednavigasjon">
           <a href="tjenester.html">Tjenester</a>
           <a href="bestill.html">Bestill time</a>
           <a href="kontakt.html">Kontakt</a>
         </nav>
+        <div class="burger" onclick="toggleMenu()" aria-label="Meny">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="header-social">
           <a href="https://www.instagram.com/daviddalehaugaasland/" target="_blank" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -259,7 +311,10 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('show');
+    }
   </script>
 </body>
 </html>
-
