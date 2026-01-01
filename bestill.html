@@ -29,6 +29,7 @@
       border-radius:12px;
     }
 
+    nav{display:flex;align-items:center;gap:1rem}
     nav a{
       margin-left:1rem;
       color:inherit;
@@ -51,6 +52,52 @@
     }
     .header-social a:hover{ opacity:1; transform:scale(1.1); }
 
+    /* BURGER */
+    .burger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+    }
+    .burger span{
+      width:26px;
+      height:3px;
+      background:var(--accent);
+      border-radius:2px;
+    }
+
+    @media(max-width:768px){
+      nav{
+        position:absolute;
+        top:100%;
+        right:0;
+        background:white;
+        flex-direction:column;
+        width:100%;
+        max-height:0;
+        overflow:hidden;
+        transition:0.3s ease;
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+        padding:0;
+      }
+      nav.show{
+        max-height:300px;
+        padding:1rem 0;
+      }
+      nav a{
+        margin:0;
+        padding:.75rem 1rem;
+        width:100%;
+        text-align:right;
+      }
+      .burger{
+        display:flex;
+      }
+      .header-social{
+        display:none; /* skjul sosiale ikoner på mobil */
+      }
+    }
+
     main{padding:2rem 0}
     section{margin:1.5rem 0}
     .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 16px rgba(16,24,40,0.04)}
@@ -59,7 +106,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:1.5rem;
-      align-items:start; /* endret fra center til start */
+      align-items:start;
     }
     @media(max-width:800px){ .grid-2{grid-template-columns:1fr;} }
 
@@ -89,11 +136,16 @@
         </div>
       </a>
       <div style="display:flex;align-items:center;gap:1rem">
-        <nav aria-label="Hovednavigasjon">
+        <nav id="nav" aria-label="Hovednavigasjon">
           <a href="tjenester.html">Tjenester</a>
           <a href="bestill.html">Bestill time</a>
           <a href="kontakt.html">Kontakt</a>
         </nav>
+        <div class="burger" onclick="toggleMenu()" aria-label="Meny">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="header-social">
           <a href="https://www.instagram.com/daviddalehaugaasland/" target="_blank" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -216,10 +268,8 @@
     const dateInput = document.getElementById('date');
     const phoneInput = document.getElementById('phone');
 
-    // (5) Dato kan ikke være tidligere enn i dag
     dateInput.min = new Date().toISOString().split("T")[0];
 
-    // (6) Automatisk telefonformat
     phoneInput.addEventListener('input', () => {
       phoneInput.value = phoneInput.value
         .replace(/\D/g, "")
@@ -256,7 +306,6 @@
         return;
       }
 
-      // (7) Hindre duplikatbestilling
       const bookings = JSON.parse(localStorage.getItem('ft_bookings') || '[]');
 
       if (bookings.some(b => b.phone === data.phone && b.date === data.date)) {
@@ -281,7 +330,11 @@
     });
 
     dateInput.addEventListener('keydown', e => e.preventDefault());
+
+    // BURGER
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('show');
+    }
   </script>
 </body>
 </html>
-
